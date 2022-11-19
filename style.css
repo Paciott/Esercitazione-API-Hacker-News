@@ -1,1 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #eefcfb;
+}
+
+header {
+  background-image: url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+header h1 {
+  position: relative;
+  color: white;
+  z-index: 2;
+  display: flex;
+  margin: 0;
+  gap: 0.5rem;
+}
+
+svg {
+  fill: white;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+  font-family: inherit;
+  position: fixed;
+  right: 0;
+  top: 2.3rem;
+  z-index: 6;
+  width: 5rem;
+  height: 2.5rem;
+  border: none;
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+button:hover::after {
+  background-color: #042c2a;
+  height: 16rem;
+  width: 16rem;
+}
+
+button::after {
+  position: fixed;
+  content: "";
+  right: 0;
+  top: 0;
+  transform: translate(128px, -128px) rotate(45deg);
+  background: black;
+  height: 15rem;
+  width: 15rem;
+  z-index: -1;
+  transition: all 150ms linear;
+}
+
+.card {
+  border: 1px solid black;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #dff2ea;
+  transition: box-shadow 100ms linear;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+#container {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding: 0 2rem;
+}
+
+.loader {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.error {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.secondError {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 2rem;
+  border: 1px solid black;
+}
+
+span {
+  display: block;
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: #042c2a;
+  transition: all 150ms ease-in;
+  border-bottom: 0px;
+}
+
+a:hover {
+  border-bottom: 2px solid #042c2a;
+}
+@media (max-width: 420px) {
+  svg {
+    display: none;
+  }
+
+  h1 {
+    width: 50%;
+  }
+
+  .loader {
+    font-size: 2rem;
+  }
+
+  .error {
+    font-size: 1.5rem;
+  }
+}
