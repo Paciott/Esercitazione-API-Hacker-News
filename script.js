@@ -67,12 +67,21 @@ const createCards = (data) => {
   card.appendChild(readArticle);
 };
 
+//creiamo una funzione che previene lo spam del refresh
+const preventSpam = () => {
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.disabled = false;
+  }, "1000");
+};
+
 //creiamo il bottone del refresh
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", () => {
   let container = document.getElementById("container");
   container.innerHTML = "";
-
+  preventSpam();
   getIDs();
 });
 
